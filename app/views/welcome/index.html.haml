@@ -29,3 +29,11 @@
           = idea.title
         - else
           = idea.title
+      .pull-right
+        イイネ!: #{ idea.like_ideas.size }
+        - if logged_in?
+          - if @already_like_ideas.include? idea.id
+            = link_to('イイネ済み', like_idea_path(idea), class: 'btn btn-info disabled')
+          - else
+            = link_to('イイネ!', like_idea_path(idea), method: :post, remote: true,
+                class: 'btn btn-info', id: "like_idea_#{idea.id}", onclick: "like(like_idea_#{idea.id})")

@@ -8,5 +8,10 @@ Rails.application.routes.draw do
     resources :comments, only: :create
   end
 
+  namespace :like do
+    post '/idea/:id', action: :idea,  constraints: { :id => /\d+/ }, as: :idea
+    post '/comment/:id', action: :comment,  constraints: { :id => /\d+/ }, as: :comment
+  end
+
   match '*path' => 'application#error404', via: :all
 end

@@ -6,6 +6,7 @@ class IdeasController < ApplicationController
     @idea = Idea.find(params[:id])
     @comments = @idea.comments
     @comment = Comment.new
+    @already_like_comments = @idea.like_comments.where(user_id: session[:user_id]).pluck(:comment_id)  if logged_in?
   end
 
   def create

@@ -12,6 +12,14 @@
           = comment.body
         - else
           = comment.body
+        .pull-right
+          イイネ!: #{ comment.like_comments.size }
+          - if logged_in?
+            - if @already_like_comments.include? comment.id
+              = link_to('イイネ済み', like_comment_path(comment), class: 'btn btn-info disabled')
+            - else
+              = link_to('イイネ!', like_comment_path(comment), method: :post, remote: true,
+                  class: 'btn btn-info', id: "like_comment_#{comment.id}", onclick: "like(like_comment_#{comment.id})")
 - if logged_in?
   = form_for [@idea, @comment] do |f|
     - if @comment.errors.any?
