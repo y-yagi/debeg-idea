@@ -198,6 +198,8 @@ GEM
     rails-assets-bootstrap (3.1.1)
       rails-assets-jquery (>= 1.9.0)
     rails-assets-jquery (2.1.0)
+    rails-footnotes (4.0.1)
+      rails (>= 3.2)
     rails_12factor (0.0.2)
       rails_serve_static_assets
       rails_stdout_logging
@@ -280,6 +282,7 @@ DEPENDENCIES
   pry-remote
   rails (= 4.1.0)
   rails-assets-bootstrap
+  rails-footnotes (>= 4.0.0, < 5)
   rails_12factor
   rspec-core (~> 3.0.0.beta)!
   rspec-expectations (~> 3.0.0.beta)!

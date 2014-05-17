@@ -32,6 +32,7 @@ group :development, :test do
   gem 'rspec-mocks', '~> 3.0.0.beta', github: 'rspec/rspec-mocks'
   gem 'rspec-support', '~> 3.0.0.beta', github: 'rspec/rspec-support'
   gem 'factory_girl_rails', '~> 4.4.1'
+  gem 'rails-footnotes', '>= 4.0.0', '<5'
 end
 
 group :test do
